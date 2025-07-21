@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Avaliação do Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #51111f;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ddd;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #551a25;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ddd;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #270a16;
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #551a25;
+    }
+
+    #mensagem {
+      max-width: 500px;
+      margin: 20px auto;
+      text-align: center;
+      color: #fffacd;
+      font-size: 18px;
+      display: none;
+      background-color: #6e2638;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulário de Avaliação do Bar</h1>
+
+  <form id="formAvaliacao">
+    <label for="nome">Seu nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+    <label for="nota">Nota para o bar (1 a 5):</label>
+    <select id="nota" name="nota" required>
+      <option value="">Selecione</option>
+      <option value="1">1 - Péssimo</option>
+      <option value="2">2 - Ruim</option>
+      <option value="3">3 - Regular</option>
+      <option value="4">4 - Bom</option>
+      <option value="5">5 - Excelente</option>
+    </select>
+
+    <label for="comentario">Comentário:</label>
+    <textarea id="comentario" name="comentario" rows="4" placeholder="Escreva o que achou..."></textarea>
+
+    <label for="experiencia">Você voltaria ao bar?</label>
+    <select id="experiencia" name="experiencia" required>
+      <option value="">Selecione</option>
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+      <option value="talvez">Talvez</option>
+    </select>
+
+    <button type="submit">Enviar Avaliação</button>
+  </form>
+
+  <div id="mensagem">💖 Obrigado pela sua avaliação! Sua opinião é um brinde pra gente! 🍻</div>
+
+  <script>
+    document.getElementById("formAvaliacao").addEventListener("submit", function(event) {
+      event.preventDefault(); // Impede envio real do formulário
+      document.getElementById("mensagem").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
