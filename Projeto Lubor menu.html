@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardápio do Bar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #51111f;
+    }
+
+    header {
+      background-color: #270a16;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+
+    .esquerda, .direita {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .esquerda {
+      background-color: #551a25;
+      border-right: 2px solid #270a16;
+    }
+
+    .direita {
+      background-color:  #551a25;
+    }
+
+    h2 {
+      color: #ddd;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 15px;
+      background-color: #270a16;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      color: #ddd;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #ddd;
+      margin-top: 5px;
+    }
+    
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #270a16;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button:hover {
+      background-color: #51111f;
+    }
+  </style>
+</head>
+<body>
+<center>
+  <header>
+    Lubor Bar - Cardápio <br>  <p>Pronto para fazer seu pedido?</p>
+  </header>
+</center>
+  <div class="container">
+    <div class="esquerda">
+      <h2>Petiscos & Porções</h2>
+      <ul>
+        <li>
+          <div class="item"><span>Batata Frita</span><span>R$ 8,00</span></div>
+          <div class="desc">Crocantes e sequinhas, servidas com molho especial.</div>
+        </li>
+        <li>
+          <div class="item"><span>Frango à passarinho</span><span>R$ 28,00</span></div>
+          <div class="desc">Temperado e frito com alho, ideal para compartilhar.</div>
+        </li>
+        <li>
+          <div class="item"><span>Bolinhos de bacalhau</span><span>R$ 24,00</span></div>
+          <div class="desc">4 unidades com massa leve e recheio de bacalhau.</div>
+        </li>
+        <li>
+          <div class="item"><span>Calabresa acebolada</span><span>R$ 22,00</span></div>
+          <div class="desc">Fatiada na chapa com cebolas douradas.</div>
+        </li>
+        <li>
+          <div class="item"><span>Pasteis (4 un)</span><span>R$ 16,00</span></div>
+          <div class="desc">Massa crocante e recheio bem temperado de carne, camarão, frango com catupiry, pizza, queijo ou calabresa.</div>
+        </li>
+        <li>
+          <div class="item"><span>Isca de peixe</span><span>R$ 30,00</span></div>
+          <div class="desc">Peixe empanado frito servido com limão e molho tártaro.</div>
+        </li>
+        <li>
+          <div class="item"><span>Mandioca frita</span><span>R$ 20,00</span></div>
+          <div class="desc">Crocante por fora, macia por dentro.</div>
+        </li>
+        <li>
+          <div class="item"><span>Mini hambúrguer</span><span>R$ 26,00</span></div>
+          <div class="desc">Trio de mini hambúrgueres com queijo e molho da casa.</div>
+        </li>
+        <li>
+          <div class="item"><span>Queijo coalho na chapa</span><span>R$ 18,00</span></div>
+          <div class="desc">Queijo dourado na chapa com melado ou orégano.</div>
+        </li>
+        <li>
+          <div class="item"><span>Espetinho misto</span><span>R$ 22,00</span></div>
+          <div class="desc">Carne, frango e legumes grelhados no espeto.</div>
+        </li>
+         <li>
+          <div class="item"><span>Milho Cozido</span><span>R$ 20,00</span></div>
+          <div class="desc"> 4 Espigas de milho cozidas no sal e servidas com manteiga derretida.</div>
+        </li>
+         <li>
+          <div class="item"><span>Picanha na Brasa</span><span>R$ 46,00</span></div>
+          <div class="desc"> Fatias de picanha grelhadas com alho, servidas na chapa com farofa e vinagrete.</div>
+        </li>
+      </ul>
+       <center>
+    <a href="Projeto Lubor Sobremesa.html">
+    <button>Sobremesas:</button>
+  </a>
+    </center>
+    </div>
+
+    <div class="direita">
+      <h2>Bebidas & Cervejas</h2>
+      <ul>
+        <li>
+          <div class="item"><span>Caipirinha de limão</span><span>R$ 14,00</span></div>
+          <div class="desc">Feita com cachaça artesanal, gelo e limão fresco.</div>
+        </li>
+        <li>
+          <div class="item"><span>Caipiroska</span><span>R$ 16,00</span></div>
+          <div class="desc">Vodka com (morango, abacaxi, cajá, kiwi, caju, maracúja ou acerola) e açúcar.</div>
+        </li>
+        <li>
+          <div class="item"><span>Gin tônica</span><span>R$ 20,00</span></div>
+          <div class="desc">Gin, água tônica e limão siciliano.</div>
+        </li>
+        <li>
+          <div class="item"><span>Whisky Red Label (dose)</span><span>R$ 18,00</span></div>
+          <div class="desc">Dose servida com ou sem gelo.</div>
+        </li>
+        <li>
+          <div class="item"><span>Vodka Absolut (dose)</span><span>R$ 10,00</span></div>
+          <div class="desc">Vodka pura ou com gelo.</div>
+        </li>
+        <li>
+          <div class="item"><span>Refrigerante lata</span><span>R$ 5.50</span></div>
+          <div class="desc">Coca-Cola, Guaraná, Fanta ou Sprite (lata 350ml).</div>
+          </li>
+          <li>
+          <div class="item"><span>Refrigerante garrafa 1l ou 2l</span><span>R$ 10,50</span></div>
+          <div class="desc">Coca-Cola, Guaraná, Fanta ou Sprite.</div>
+        </li>
+        <li>
+          <div class="item"><span>Água</span><span>R$ 4,00</span></div>
+          <div class="desc">Garrafa 500ml, com ou sem gás leve e refrescante.</div>
+        </li>
+        <li>
+          <div class="item"><span>Cerveja Long Neck</span><span>R$ 10,00</span></div>
+          <div class="desc">Cerveja premium de 330ml, bem gelada.</div>
+        </li>
+          <li>
+          <div class="item"><span>Cerveja 600ml</span><span>R$ 12,00</span></div>
+          <div class="desc">Garrafa retornável, servida gelada.</div>
+        </li>
+        <li>
+          <div class="item"><span>Cerveja lata</span><span>R$ 7,00</span></div>
+          <div class="desc">Servida gelada.</div>
+        </li>
+        <li>
+          <div class="item"><span>Chopp artesanal 300ml</span><span>R$ 12,00</span></div>
+          <div class="desc">Pilsen leve, tirada na hora.</div>
+        </li>
+      </ul>
+      <center>
+      <a href="Projeto Lubor Pedido.html">
+    <button>Montar Pedido:</button>
+  </a>
+  </center>
+    </div>
+    </div>
+
+</body>
+</html>
