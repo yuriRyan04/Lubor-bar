@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login do Bar</title>
+  <style>
+    body {
+      font-family:'Times New Roman', Times, serif;
+      background: url('https://images.unsplash.com/photo-1604147706284-6b706d6f0554') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #270a16;
+    }
+
+    .login-box {
+      background-color: #551a25;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #000;
+      width: 300px;
+      color: #fff;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .login-box button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #51111f;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: #6d1c2e;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login do Bar</h2>
+    <form id="loginForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+      <label for="numero">Número:</label>
+      <input type="tel" id="numero" name="numero" placeholder="(XX) XXXXX-XXXX" required>
+
+      <label for="mesa">Número da Mesa:</label>
+      <input type="text" id="mesa" name="mesa" placeholder="mesa 01, mesa 02, mesa 03 etc.." required>
+
+      <button type="submit">Entrar e Ver Cardápio</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Impede envio do formulário
+
+      const nome = document.getElementById("nome").value.trim();
+      const numero = document.getElementById("numero").value.trim();
+      const mesa = document.getElementById("mesa").value.trim();
+
+      if (!nome || !numero || !mesa) {
+        alert("Por favor, preencha todos os campos.");
+      } else {
+        alert(`Bem-vindo(a), ${nome}!`);
+        window.location.href = "Projeto Lubor main.html";
+      }
+    });
+  </script>
+</body>
+</html>
