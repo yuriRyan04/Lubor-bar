@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido do Cliente</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #51111f;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #ddd;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .form {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 8px;
+      margin: 5px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #270a16;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #551a25;
+    }
+
+    #lista {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      background-color: #ffffff;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ccc;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #total {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #pagamento, #mensagem {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Monte seu Pedido</h1>
+
+  <div class="form">
+    <input type="text" id="item" placeholder="Nome do item" oninput="buscarPreco()">
+    <input type="number" id="preco" placeholder="Preço (R$)" step="0.01" readonly>
+    <button onclick="adicionarItem()">Adicionar ao Pedido</button>
+  </div>
+
+  <div id="lista"></div>
+
+  <div id="total">Total: R$ 0.00</div>
+
+  <div style="text-align: center;">
+    <button onclick="finalizarPedido()">Finalizar Pedido</button>
+  </div>
+
+  <div id="pagamento">
+    <h3>Forma de Pagamento</h3>
+    <select id="opcao">
+      <option disabled selected>Escolha a forma de pagamento</option>
+      <option>Dinheiro</option>
+      <option>Cartão de Crédito</option>
+      <option>Cartão de Débito</option>
+      <option>Pix</option>
+    </select>
+  </div>
+
+  <div id="mensagem">
+    <h2>🍽️ Bom Pedido!</h2>
+  </div>
+
+  <script>
+    const cardapio = {
+      "batata frita": 8.00,
+      "frango à passarinho": 28.00,
+      "bolinho de bacalhau": 24.00,
+      "calabresa acebolada": 22.00,
+      "pastel": 16.00,
+      "isca de peixe": 30.00,
+      "mandioca frita": 20.00,
+      "mini hambúrguer": 26.00,
+      "queijo coalho na chapa": 18.00,
+      "espetinho misto": 22.00,
+      "milho cozido": 20.00,
+      "picanha na brasa": 46.00,
+      "cerveja lata": 7.00,
+      "caipirinha de limão": 14.00,
+      "refrigerante lata": 5.50,
+      "refrigerante garrafa 1l ou 2l": 10.50,
+      "água": 4.00,
+      "gin tônica": 20.00,
+      "whisky red label (dose)": 18.00,
+      "caipiroska": 16.00,
+      "vodka absolut (dose)": 10.00,
+      "cerveja long neck": 10.00,
+      "cerveja 600ml": 12.00,
+      "chopp artesanal 300ml": 12.00,
+      "pudim de leite condensado": 6.00,
+      "brigadeiro de colher": 8.00,
+      "banana flambada com sorvete": 12.00,
+      "mini churros com doce de leite": 14.00,
+      "petit gâteau": 18.00,
+      "torta de limão gelada": 10.00,
+      "sorvete no copo (2 bolas)": 9.00
+    };
+
+    let total = 0;
+
+    function buscarPreco() {
+      const nome = document.getElementById("item").value.toLowerCase().trim();
+      if (cardapio[nome]) {
+        document.getElementById("preco").value = cardapio[nome].toFixed(2);
+      } else {
+        document.getElementById("preco").value = "";
+      }
+    }
+
+    function adicionarItem() {
+      const nome = document.getElementById("item").value.trim().toLowerCase();
+      const preco = parseFloat(document.getElementById("preco").value);
+
+      if (nome === "" || isNaN(preco)) {
+        alert("Digite um item válido do cardápio.");
+        return;
+      }
+
+      const lista = document.getElementById("lista");
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `<span>${nome}</span><span>R$ ${preco.toFixed(2)}</span>`;
+      lista.appendChild(div);
+
+      total += preco;
+      document.getElementById("total").textContent = `Total: R$ ${total.toFixed(2)}`;
+
+      document.getElementById("item").value = "";
+      document.getElementById("preco").value = "";
+    }
+
+    function finalizarPedido() {
+      if (total === 0) {
+        alert("Adicione pelo menos um item.");
+        return;
+      }
+
+      document.getElementById("pagamento").style.display = "block";
+      document.getElementById("mensagem").style.display = "block";
+    }
+
+    // Avisa e redireciona após escolha de pagamento
+    document.getElementById("opcao").addEventListener("change", function () {
+      const confirmar = confirm("Deseja avaliar o bar?");
+      if (confirmar) {
+        window.location.href = "Projeto Lubor formulário.html";
+      }
+    });
+  </script>
+</body>
+</html>
